@@ -45,10 +45,10 @@ test_image_quality(string type)
 
         for (int y = 0; y < height; y++)
         {
-            for (int x = 30; x < width; x++)
+            for (int x = 0; x < width; x++)
             {
                 int delta = abs(test_img_left.at<uchar>(y, x) - ground_truth_left.at<uchar>(y, x));
-                if (delta > 1)
+                if (delta > 1 && test_img_left.at<uchar>(y, x) != 0)
                 {
                     bad_pixels_left++;
                 }
@@ -57,18 +57,18 @@ test_image_quality(string type)
 
         for (int y = 0; y < height; y++)
         {
-            for (int x = 0; x < width - 30; x++)
+            for (int x = 0; x < width; x++)
             {
                 int delta = abs(test_img_right.at<uchar>(y, x) - ground_truth_right.at<uchar>(y, x));
-                if (delta > 1)
+                if (delta > 1 && test_img_right.at<uchar>(y, x) != 0)
                 {
                     bad_pixels_right++;
                 }
             }
         }
 
-        double rate_left = double(bad_pixels_left) / (height * (width - 30));
-        double rate_right = double(bad_pixels_right) / (height * (width - 30));
+        double rate_left = double(bad_pixels_left) / (height * width);
+        double rate_right = double(bad_pixels_right) / (height * width);
         printf("[%s %s]: left_rate:%.4lf%% right_rate:%.4lf%%\n", name.c_str(), type.c_str(), rate_left * 100, rate_right * 100);
         average_rate_left += rate_left;
         average_rate_right += rate_right;
