@@ -1,17 +1,17 @@
-##Language
+## Language
 c++11
-##Dependencies
+## Dependencies
 ```
 cmake
 opencv
 ```
-##Generate the results
+## Generate the results
 ```
 cmake .
 make
 ./runner
 ```
-##Directory structure
+## Directory structure
 ```
 .
 ├── README.md
@@ -20,16 +20,16 @@ make
 ├── ALL-2views (source image)
 └── result (output image)
 ```
-##original views
+## original views
 ![](https://raw.githubusercontent.com/luosch/stereo-matching/master/ALL-2views/Aloe/view1.png)
 ![](https://raw.githubusercontent.com/luosch/stereo-matching/master/ALL-2views/Aloe/view5.png)
-##SSD
+## SSD
 ![](https://raw.githubusercontent.com/luosch/stereo-matching/master/result/Aloe_disp1_SSD.png)
 ![](https://raw.githubusercontent.com/luosch/stereo-matching/master/result/Aloe_disp1_SSD.png)
-##NCC
+## NCC
 ![](https://raw.githubusercontent.com/luosch/stereo-matching/master/result/Aloe_disp1_NCC.png)
 ![](https://raw.githubusercontent.com/luosch/stereo-matching/master/result/Aloe_disp1_NCC.png)
-##ASW
+## ASW
 ![](https://raw.githubusercontent.com/luosch/stereo-matching/master/result/Aloe_disp1_ASW.png)
 ![](https://raw.githubusercontent.com/luosch/stereo-matching/master/result/Aloe_disp1_ASW.png)
 ## License
